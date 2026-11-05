@@ -1,0 +1,325 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Add Student | Harika ScholarSpace</title>
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<header class="navbar">
+
+    <a href="index.html" class="brand">
+        <span class="brand-icon">
+            <i class="fa-solid fa-graduation-cap"></i>
+        </span>
+
+        <span class="brand-text">
+            <strong>Harika <em>ScholarSpace</em></strong>
+            <small>STUDENT MANAGEMENT SYSTEM</small>
+        </span>
+    </a>
+
+    <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="list.html">Students</a>
+        <a href="listOne.html">Search</a>
+        <a href="insert.html" class="active">Add Student</a>
+        <a href="update.html">Update</a>
+        <a href="delete.html">Delete</a>
+    </nav>
+
+    <div class="nav-avatar">
+        <i class="fa-solid fa-user-graduate"></i>
+    </div>
+
+</header>
+
+<main class="registration-page">
+
+    <!-- PAGE HEADING -->
+    <section class="registration-heading">
+
+        <span class="section-label">
+            <i class="fa-solid fa-leaf"></i>
+            STUDENT ENROLLMENT
+        </span>
+
+        <h1>Welcome a <em>new scholar.</em></h1>
+
+        <p>
+            Every journey begins with a first step.
+            Add a new student to your ScholarSpace community.
+        </p>
+
+    </section>
+
+    <!-- REGISTRATION LAYOUT -->
+    <section class="registration-layout">
+
+        <!-- FORM CARD -->
+        <div class="registration-card">
+
+            <div class="registration-card-header">
+
+                <div class="registration-header-icon">
+                    <i class="fa-solid fa-user-plus"></i>
+                </div>
+
+                <div>
+                    <h2>Student Registration</h2>
+                    <p>Enter the details below to create a record.</p>
+                </div>
+
+            </div>
+
+            <form id="studentRegistrationForm">
+
+                <div class="form-section-label">
+                    <i class="fa-solid fa-id-card"></i>
+                    ACADEMIC INFORMATION
+                </div>
+
+                <div class="registration-form-grid">
+
+                    <!-- STUDENT ID -->
+                    <div class="form-field">
+                        <label for="sno">
+                            Student ID <span>*</span>
+                        </label>
+
+                        <div class="input-with-icon">
+                            <i class="fa-solid fa-hashtag"></i>
+
+                            <input
+                                type="number"
+                                id="sno"
+                                placeholder="e.g. 1008"
+                                min="1"
+                                step="1"
+                                required
+                            >
+                        </div>
+                    </div>
+
+                    <!-- NAME -->
+                    <div class="form-field">
+                        <label for="name">
+                            Full Name <span>*</span>
+                        </label>
+
+                        <div class="input-with-icon">
+                            <i class="fa-solid fa-user"></i>
+
+                            <input
+                                type="text"
+                                id="name"
+                                placeholder="Enter student's full name"
+                                maxlength="100"
+                                required
+                            >
+                        </div>
+                    </div>
+
+                    <!-- CLASS -->
+                    <div class="form-field">
+                        <label for="studentClass">
+                            Student Class <span>*</span>
+                        </label>
+
+                        <div class="input-with-icon">
+                            <i class="fa-solid fa-school"></i>
+
+                            <select id="studentClass" required>
+                                <option value="">
+                                    Select Class
+                                </option>
+                                <option value="1">Class 1</option>
+                                <option value="2">Class 2</option>
+                                <option value="3">Class 3</option>
+                                <option value="4">Class 4</option>
+                                <option value="5">Class 5</option>
+                                <option value="6">Class 6</option>
+                                <option value="7">Class 7</option>
+                                <option value="8">Class 8</option>
+                                <option value="9">Class 9</option>
+                                <option value="10">Class 10</option>
+                                <option value="11">Class 11</option>
+                                <option value="12">Class 12</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- MARKS -->
+                    <div class="form-field">
+                        <label for="total">
+                            Total Marks <span>*</span>
+                        </label>
+
+                        <div class="input-with-icon">
+                            <i class="fa-solid fa-chart-line"></i>
+
+                            <input
+                                type="number"
+                                id="total"
+                                placeholder="Enter total marks"
+                                min="0"
+                                step="any"
+                                required
+                            >
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="form-section-label personal-section">
+                    <i class="fa-solid fa-address-card"></i>
+                    PERSONAL INFORMATION
+                </div>
+
+                <div class="registration-form-grid">
+
+                    <!-- AGE -->
+                    <div class="form-field">
+                        <label for="age">
+                            Student Age <span>*</span>
+                        </label>
+
+                        <div class="input-with-icon">
+                            <i class="fa-solid fa-calendar-days"></i>
+
+                            <input
+                                type="number"
+                                id="age"
+                                placeholder="Enter age"
+                                min="1"
+                                max="120"
+                                step="1"
+                                required
+                            >
+                        </div>
+                    </div>
+
+                    <!-- PHONE -->
+                    <div class="form-field">
+                        <label for="phnno">
+                            Phone Number <span>*</span>
+                        </label>
+
+                        <div class="input-with-icon">
+                            <i class="fa-solid fa-phone"></i>
+
+                            <input
+                                type="tel"
+                                id="phnno"
+                                placeholder="10-digit phone number"
+                                pattern="[0-9]{10}"
+                                maxlength="10"
+                                inputmode="numeric"
+                                title="Enter exactly 10 digits"
+                                required
+                            >
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- MESSAGE -->
+                <div id="registrationMessage" class="registration-message" role="status" hidden></div>
+                <!-- BUTTONS -->
+                <div class="registration-actions">
+
+                    <button type="submit"
+                            id="saveStudentButton"
+                            class="btn btn-primary">
+                        <i class="fa-solid fa-circle-check"></i>
+                        Save Student
+                    </button>
+
+                    <button type="reset"
+                            class="btn btn-outline">
+                        <i class="fa-solid fa-rotate-left"></i>
+                        Clear Form
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+        <!-- RIGHT SIDE IMAGE -->
+        <aside class="registration-side">
+
+            <div class="registration-image">
+                <img
+                    src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1000&q=85"
+                    alt="Students collaborating in a university"
+                >
+            </div>
+
+            <div class="registration-side-content">
+
+                <span class="section-label">
+                    GROWING TOGETHER
+                </span>
+
+                <h3>Great minds begin with great opportunities.</h3>
+
+                <p>
+                    Every student is a new possibility.
+                    Keep their academic journey organized,
+                    accessible and beautifully managed.
+                </p>
+
+                <div class="registration-side-note">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <span>Thoughtful record management</span>
+                </div>
+
+            </div>
+
+        </aside>
+
+    </section>
+
+</main>
+
+<footer class="footer">
+
+    <div>
+        <strong>Harika ScholarSpace</strong>
+        <p>Designed with purpose. Built for better learning.</p>
+    </div>
+
+    <span>
+        © 2026 Harika ScholarSpace | Student Management System
+    </span>
+
+</footer>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

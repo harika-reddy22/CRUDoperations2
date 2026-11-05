@@ -1,0 +1,319 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Delete Student | Harika ScholarSpace</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<header class="navbar">
+    <a href="index.html" class="brand">
+        <span class="brand-icon">
+            <i class="fa-solid fa-graduation-cap"></i>
+        </span>
+
+        <span class="brand-text">
+            <strong>Harika <em>ScholarSpace</em></strong>
+            <small>STUDENT MANAGEMENT SYSTEM</small>
+        </span>
+    </a>
+
+    <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="list.html">Students</a>
+        <a href="listOne.html">Search</a>
+        <a href="insert.html">Add Student</a>
+        <a href="update.html">Update</a>
+        <a href="delete.html" class="active">Delete</a>
+    </nav>
+
+    <div class="nav-avatar">
+        <i class="fa-solid fa-user-graduate"></i>
+    </div>
+</header>
+
+<main class="delete-page">
+
+    <!-- PAGE HEADING -->
+    <section class="delete-heading">
+        <span class="section-label">
+            <i class="fa-solid fa-leaf"></i>
+            RECORD MANAGEMENT
+        </span>
+
+        <h1>Manage with <em>care.</em></h1>
+
+        <p>
+            Find and review the student record you wish to remove.
+            Every deletion requires confirmation to help prevent mistakes.
+        </p>
+    </section>
+
+    <div class="delete-layout">
+
+        <div class="delete-main">
+
+            <!-- SEARCH CARD -->
+            <section class="delete-search-card">
+
+                <div class="delete-card-heading">
+                    <div class="delete-heading-icon">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+
+                    <div>
+                        <h2>Find Student Record</h2>
+                        <p>Search by student name or ID.</p>
+                    </div>
+                </div>
+
+                <div class="delete-search-row">
+
+                    <div class="delete-search-box">
+                        <i class="fa-solid fa-search"></i>
+
+                        <input
+                            type="text"
+                            id="deleteSearchInput"
+                            placeholder="Enter student name or ID..."
+                            autocomplete="off"
+                            aria-label="Search student to delete"
+                            aria-controls="deleteSuggestions"
+                            aria-expanded="false"
+                        >
+
+                        <div
+                            id="deleteSuggestions"
+                            class="delete-suggestions"
+                            role="listbox"
+                            hidden>
+                        </div>
+                    </div>
+
+                    <button
+                        type="button"
+                        id="deleteFindButton"
+                        class="btn btn-primary">
+                        Find Student
+                    </button>
+
+                </div>
+
+                <p class="delete-search-help">
+                    <i class="fa-solid fa-circle-info"></i>
+                    Select the correct student from the suggestions
+                    before proceeding.
+                </p>
+
+            </section>
+
+            <!-- STUDENT PREVIEW -->
+            <section
+                id="deletePreview"
+                class="delete-preview"
+                hidden>
+
+                <div class="delete-preview-header">
+                    <span>
+                        <i class="fa-solid fa-id-card"></i>
+                        SELECTED STUDENT
+                    </span>
+
+                    <span class="delete-preview-badge">
+                        Record Found
+                    </span>
+                </div>
+
+                <div class="delete-student-identity">
+                    <div id="deleteAvatar" class="delete-avatar">HS</div>
+
+                    <div>
+                        <span class="section-label">STUDENT PROFILE</span>
+                        <h2 id="deleteStudentName">Student Name</h2>
+                        <p>
+                            Student ID:
+                            <strong id="deleteStudentId">--</strong>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="delete-details-grid">
+
+                    <div class="delete-detail">
+                        <small>Class</small>
+                        <strong id="deleteClass">--</strong>
+                    </div>
+
+                    <div class="delete-detail">
+                        <small>Total Marks</small>
+                        <strong id="deleteMarks">--</strong>
+                    </div>
+
+                    <div class="delete-detail">
+                        <small>Age</small>
+                        <strong id="deleteAge">--</strong>
+                    </div>
+
+                    <div class="delete-detail">
+                        <small>Phone Number</small>
+                        <strong id="deletePhone">--</strong>
+                    </div>
+
+                </div>
+
+                <!-- WARNING -->
+                <div class="delete-warning">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+
+                    <div>
+                        <strong>Important: This action is permanent.</strong>
+                        <p>
+                            Deleting this student will remove their
+                            record from the database. This action
+                            cannot be undone from ScholarSpace.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="delete-actions">
+
+                    <button
+                        type="button"
+                        id="deleteStudentButton"
+                        class="delete-danger-button">
+                        <i class="fa-solid fa-trash-can"></i>
+                        Delete Student
+                    </button>
+
+                    <a href="list.html" class="btn btn-outline">
+                        Cancel & Return
+                    </a>
+
+                </div>
+
+            </section>
+
+            <!-- STATUS -->
+            <div
+                id="deleteMessage"
+                class="delete-message"
+                role="status"
+                hidden>
+            </div>
+
+        </div>
+
+        <!-- SIDE PANEL -->
+        <aside class="delete-side">
+
+            <div class="delete-side-image">
+                <img
+                    src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=85"
+                    alt="Students working together"
+                >
+            </div>
+
+            <div class="delete-side-content">
+
+                <span class="section-label">
+                    THOUGHTFUL MANAGEMENT
+                </span>
+
+                <h3>Every detail deserves attention.</h3>
+
+                <p>
+                    Keeping your student database organized
+                    also means carefully managing records
+                    that are no longer required.
+                </p>
+
+                <div class="delete-side-tip">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <span>
+                        Always verify the student's name and
+                        ID before deleting a record.
+                    </span>
+                </div>
+
+                <a href="list.html" class="delete-directory-link">
+                    Browse Student Directory
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+        </aside>
+
+    </div>
+
+</main>
+
+<!-- CONFIRMATION DIALOG -->
+<dialog id="deleteConfirmDialog" class="delete-confirm-dialog">
+
+    <div class="delete-dialog-icon">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+    </div>
+
+    <h2>Delete this student?</h2>
+
+    <p>
+        You're about to permanently remove
+        <strong id="confirmStudentName"></strong>
+        (ID: <strong id="confirmStudentId"></strong>)
+        from your database.
+    </p>
+
+    <p class="delete-dialog-note">
+        This action cannot be undone.
+    </p>
+
+    <div class="delete-dialog-actions">
+
+        <button
+            type="button"
+            id="cancelDeleteButton"
+            class="btn btn-outline">
+            Keep Student
+        </button>
+
+        <button
+            type="button"
+            id="confirmDeleteButton"
+            class="delete-danger-button">
+            Yes, Delete
+        </button>
+
+    </div>
+
+</dialog>
+
+<footer class="footer">
+    <div>
+        <strong>Harika ScholarSpace</strong>
+        <p>Designed with purpose. Built for better learning.</p>
+    </div>
+
+    <span>
+        © 2026 Harika ScholarSpace | Student Management System
+    </span>
+</footer>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

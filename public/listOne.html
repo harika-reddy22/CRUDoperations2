@@ -1,0 +1,259 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Find Student | Harika ScholarSpace</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+
+    <a href="index.html" class="brand">
+        <span class="brand-icon">
+            <i class="fa-solid fa-graduation-cap"></i>
+        </span>
+
+        <span class="brand-text">
+            <strong>Harika <em>ScholarSpace</em></strong>
+            <small>STUDENT MANAGEMENT SYSTEM</small>
+        </span>
+    </a>
+
+    <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="list.html">Students</a>
+        <a href="listOne.html" class="active">Search</a>
+        <a href="insert.html">Add Student</a>
+        <a href="update.html">Update</a>
+        <a href="delete.html">Delete</a>
+    </nav>
+
+    <div class="nav-avatar">
+        <i class="fa-solid fa-user-graduate"></i>
+    </div>
+
+</header>
+
+<main class="profile-page">
+
+    <!-- PAGE HEADING -->
+    <section class="profile-hero">
+
+        <div>
+            <span class="section-label">
+                <i class="fa-solid fa-leaf"></i>
+                STUDENT LOOKUP
+            </span>
+
+            <h1>Find your <em>student.</em></h1>
+
+            <p>
+                Every record tells a story.
+                Search effortlessly and discover
+                the student details you need.
+            </p>
+        </div>
+
+        <div class="profile-hero-image">
+            <img
+                src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=900&q=85"
+                alt="Student studying"
+            >
+        </div>
+
+    </section>
+
+    <!-- SEARCH PANEL -->
+    <section class="profile-search-panel">
+
+        <div class="profile-search-heading">
+            <div class="profile-search-icon">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+
+            <div>
+                <h2>Student Search</h2>
+                <p>Enter a name or student ID to find a record.</p>
+            </div>
+        </div>
+
+        <div class="profile-search-row">
+
+            <div class="profile-search-box">
+                <i class="fa-solid fa-search"></i>
+
+                <input
+                    type="text"
+                    id="profileSearchInput"
+                    placeholder="e.g. Harika or 1008"
+                    autocomplete="off"
+                    aria-label="Search by student name or ID"
+                    aria-controls="profileSuggestions"
+                    aria-expanded="false"
+                >
+
+                <div
+                    id="profileSuggestions"
+                    class="profile-suggestions"
+                    role="listbox"
+                    hidden>
+                </div>
+            </div>
+
+            <button
+                type="button"
+                class="btn btn-primary profile-search-button"
+                id="profileSearchButton"
+            >
+                <i class="fa-solid fa-magnifying-glass"></i>
+                Search
+            </button>
+
+        </div>
+
+        <p class="search-helper">
+            <i class="fa-solid fa-circle-info"></i>
+            Start typing to see matching students.
+            Select a student from the suggestions.
+        </p>
+
+    </section>
+
+    <!-- FEEDBACK MESSAGE -->
+    <div id="profileMessage" class="profile-message" role="status" hidden></div>
+
+    <!-- STUDENT PROFILE -->
+    <section id="studentProfile" class="student-profile-card" hidden>
+
+        <div class="student-profile-banner">
+            <span>
+                <i class="fa-solid fa-id-card"></i>
+                STUDENT INFORMATION
+            </span>
+
+            <span class="profile-record-badge">
+                <i class="fa-solid fa-circle-check"></i>
+                Record Found
+            </span>
+        </div>
+
+        <div class="profile-identity">
+
+            <div id="profileAvatar" class="profile-avatar">HS</div>
+
+            <div>
+                <span class="section-label">STUDENT PROFILE</span>
+                <h2 id="profileName">Student Name</h2>
+                <p>
+                    Student ID:
+                    <strong id="profileStudentId">--</strong>
+                </p>
+            </div>
+
+        </div>
+
+        <div class="profile-details-grid">
+
+            <div class="profile-detail">
+                <span class="detail-icon">
+                    <i class="fa-solid fa-id-badge"></i>
+                </span>
+                <div>
+                    <small>Student ID</small>
+                    <strong id="detailId">--</strong>
+                </div>
+            </div>
+
+            <div class="profile-detail">
+                <span class="detail-icon">
+                    <i class="fa-solid fa-school"></i>
+                </span>
+                <div>
+                    <small>Class</small>
+                    <strong id="detailClass">--</strong>
+                </div>
+            </div>
+
+            <div class="profile-detail">
+                <span class="detail-icon">
+                    <i class="fa-solid fa-chart-line"></i>
+                </span>
+                <div>
+                    <small>Total Marks</small>
+                    <strong id="detailMarks">--</strong>
+                </div>
+            </div>
+
+            <div class="profile-detail">
+                <span class="detail-icon">
+                    <i class="fa-solid fa-calendar-days"></i>
+                </span>
+                <div>
+                    <small>Age</small>
+                    <strong id="detailAge">--</strong>
+                </div>
+            </div>
+
+            <div class="profile-detail">
+                <span class="detail-icon">
+                    <i class="fa-solid fa-phone"></i>
+                </span>
+                <div>
+                    <small>Phone Number</small>
+                    <strong id="detailPhone">--</strong>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="profile-actions">
+            <a id="profileEditLink" href="update.html" class="btn btn-primary">
+                <i class="fa-solid fa-pen-to-square"></i>
+                Edit Student
+            </a>
+
+            <a id="profileDeleteLink" href="delete.html" class="btn btn-outline">
+                <i class="fa-solid fa-trash-can"></i>
+                Delete Record
+            </a>
+
+            <a href="list.html" class="profile-back-link">
+                <i class="fa-solid fa-arrow-left"></i>
+                Back to Directory
+            </a>
+        </div>
+
+    </section>
+
+</main>
+
+<footer class="footer">
+    <div>
+        <strong>Harika ScholarSpace</strong>
+        <p>Designed with purpose. Built for better learning.</p>
+    </div>
+
+    <span>
+        © 2026 Harika ScholarSpace | Student Management System
+    </span>
+</footer>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

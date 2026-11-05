@@ -1,0 +1,366 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Update Student | Harika ScholarSpace</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<header class="navbar">
+
+    <a href="index.html" class="brand">
+        <span class="brand-icon">
+            <i class="fa-solid fa-graduation-cap"></i>
+        </span>
+
+        <span class="brand-text">
+            <strong>Harika <em>ScholarSpace</em></strong>
+            <small>STUDENT MANAGEMENT SYSTEM</small>
+        </span>
+    </a>
+
+    <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="list.html">Students</a>
+        <a href="listOne.html">Search</a>
+        <a href="insert.html">Add Student</a>
+        <a href="update.html" class="active">Update</a>
+        <a href="delete.html">Delete</a>
+    </nav>
+
+    <div class="nav-avatar">
+        <i class="fa-solid fa-user-graduate"></i>
+    </div>
+
+</header>
+
+<main class="edit-page">
+
+    <!-- PAGE HEADING -->
+    <section class="edit-heading">
+        <span class="section-label">
+            <i class="fa-solid fa-leaf"></i>
+            STUDENT RECORD MANAGEMENT
+        </span>
+
+        <h1>Refine the <em>details.</em></h1>
+
+        <p>
+            Keep every student record accurate and up to date.
+            Find a student, review their information and make
+            changes with confidence.
+        </p>
+    </section>
+
+    <div class="edit-layout">
+
+        <div class="edit-main">
+
+            <!-- SEARCH CARD -->
+            <section class="edit-search-card">
+
+                <div class="edit-card-heading">
+                    <div class="edit-heading-icon">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+
+                    <div>
+                        <h2>Find a Student</h2>
+                        <p>Search by student name or ID.</p>
+                    </div>
+                </div>
+
+                <div class="edit-search-row">
+
+                    <div class="edit-search-box">
+                        <i class="fa-solid fa-search"></i>
+
+                        <input
+                            type="text"
+                            id="editSearchInput"
+                            placeholder="Search name or ID..."
+                            autocomplete="off"
+                            aria-label="Search student to edit"
+                            aria-controls="editSuggestions"
+                            aria-expanded="false"
+                        >
+
+                        <div id="editSuggestions"
+                             class="edit-suggestions"
+                             role="listbox"
+                             hidden>
+                        </div>
+                    </div>
+
+                    <button type="button"
+                            id="editFindButton"
+                            class="btn btn-primary">
+                        Find Student
+                    </button>
+
+                </div>
+
+                <p class="edit-search-help">
+                    <i class="fa-solid fa-circle-info"></i>
+                    Choose a student from the dropdown to load
+                    their existing details.
+                </p>
+
+            </section>
+
+            <!-- EDIT FORM -->
+            <section id="editFormCard" class="edit-form-card" hidden>
+
+                <div class="edit-card-heading">
+                    <div class="edit-heading-icon">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                    </div>
+
+                    <div>
+                        <h2>Edit Student Information</h2>
+                        <p>Make the necessary changes below.</p>
+                    </div>
+                </div>
+
+                <form id="editStudentForm">
+
+                    <div class="form-section-label">
+                        <i class="fa-solid fa-id-card"></i>
+                        STUDENT INFORMATION
+                    </div>
+
+                    <div class="registration-form-grid">
+
+                        <!-- STUDENT ID -->
+                        <div class="form-field">
+                            <label for="editSno">
+                                Student ID
+                            </label>
+
+                            <div class="input-with-icon">
+                                <i class="fa-solid fa-hashtag"></i>
+
+                                <input
+                                    type="text"
+                                    id="editSno"
+                                    readonly
+                                >
+                            </div>
+                        </div>
+
+                        <!-- STUDENT NAME -->
+                        <div class="form-field">
+                            <label for="editName">
+                                Student Name <span>*</span>
+                            </label>
+
+                            <div class="input-with-icon">
+                                <i class="fa-solid fa-user"></i>
+
+                                <input
+                                    type="text"
+                                    id="editName"
+                                    maxlength="100"
+                                    required
+                                >
+                            </div>
+                        </div>
+
+                        <!-- CLASS -->
+                        <div class="form-field">
+                            <label for="editClass">
+                                Student Class
+                            </label>
+
+                            <div class="input-with-icon">
+                                <i class="fa-solid fa-school"></i>
+
+                                <input
+                                    type="text"
+                                    id="editClass"
+                                    readonly
+                                >
+                            </div>
+                        </div>
+
+                        <!-- MARKS -->
+                        <div class="form-field">
+                            <label for="editTotal">
+                                Total Marks <span>*</span>
+                            </label>
+
+                            <div class="input-with-icon">
+                                <i class="fa-solid fa-chart-line"></i>
+
+                                <input
+                                    type="number"
+                                    id="editTotal"
+                                    min="0"
+                                    step="any"
+                                    required
+                                >
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="form-section-label personal-section">
+                        <i class="fa-solid fa-address-card"></i>
+                        PERSONAL INFORMATION
+                    </div>
+
+                    <div class="registration-form-grid">
+
+                        <!-- AGE -->
+                        <div class="form-field">
+                            <label for="editAge">
+                                Age <span>*</span>
+                            </label>
+
+                            <div class="input-with-icon">
+                                <i class="fa-solid fa-calendar-days"></i>
+
+                                <input
+                                    type="number"
+                                    id="editAge"
+                                    min="1"
+                                    max="120"
+                                    step="1"
+                                    required
+                                >
+                            </div>
+                        </div>
+
+                        <!-- PHONE -->
+                        <div class="form-field">
+                            <label for="editPhone">
+                                Phone Number <span>*</span>
+                            </label>
+
+                            <div class="input-with-icon">
+                                <i class="fa-solid fa-phone"></i>
+
+                                <input
+                                    type="tel"
+                                    id="editPhone"
+                                    maxlength="10"
+                                    pattern="[0-9]{10}"
+                                    inputmode="numeric"
+                                    title="Enter exactly 10 digits"
+                                    required
+                                >
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- BUTTONS -->
+                    <div class="edit-form-actions">
+
+                        <button type="submit"
+                                id="editSaveButton"
+                                class="btn btn-primary">
+                            <i class="fa-solid fa-floppy-disk"></i>
+                            Save Changes
+                        </button>
+
+                        <button type="button"
+                                id="editResetButton"
+                                class="btn btn-outline">
+                            <i class="fa-solid fa-rotate-left"></i>
+                            Reset Changes
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+            <!-- STATUS MESSAGE -->
+            <div id="editMessage"
+                 class="edit-message"
+                 role="status"
+                 hidden>
+            </div>
+
+        </div>
+
+        <!-- SIDE PANEL -->
+        <aside class="edit-side">
+
+            <div class="edit-side-image">
+                <img
+                    src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=900&q=85"
+                    alt="Student working on academic records"
+                >
+            </div>
+
+            <div class="edit-side-content">
+
+                <span class="section-label">
+                    KEEP RECORDS ACCURATE
+                </span>
+
+                <h3>Small updates. Better organization.</h3>
+
+                <p>
+                    Keep academic records clear, consistent
+                    and up to date with ScholarSpace.
+                </p>
+
+                <div class="edit-tip">
+                    <i class="fa-solid fa-lightbulb"></i>
+
+                    <span>
+                        Search for a student first.
+                        Their existing information will
+                        automatically appear in the form.
+                    </span>
+                </div>
+
+                <a href="list.html" class="edit-directory-link">
+                    View Student Directory
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+        </aside>
+
+    </div>
+
+</main>
+
+<footer class="footer">
+    <div>
+        <strong>Harika ScholarSpace</strong>
+        <p>Designed with purpose. Built for better learning.</p>
+    </div>
+
+    <span>
+        © 2026 Harika ScholarSpace | Student Management System
+    </span>
+</footer>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

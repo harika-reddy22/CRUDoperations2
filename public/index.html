@@ -1,0 +1,255 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Harika ScholarSpace | Student Management</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<header class="navbar">
+    <a href="index.html" class="brand">
+        <span class="brand-icon">
+            <i class="fa-solid fa-graduation-cap"></i>
+        </span>
+
+        <span class="brand-text">
+            <strong>Harika <em>ScholarSpace</em></strong>
+            <small>STUDENT MANAGEMENT SYSTEM</small>
+        </span>
+    </a>
+
+    <nav class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="list.html">Students</a>
+        <a href="listOne.html">Search</a>
+        <a href="insert.html">Add Student</a>
+        <a href="update.html">Update</a>
+        <a href="delete.html">Delete</a>
+    </nav>
+
+    <div class="nav-avatar" title="Admin">
+        <i class="fa-solid fa-user-graduate"></i>
+    </div>
+</header>
+
+<main>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+
+        <div class="hero-content">
+            <span class="eyebrow">
+                <i class="fa-solid fa-leaf"></i>
+                A SMARTER WAY TO MANAGE STUDENTS
+            </span>
+
+            <h1>
+                Every student matters.
+                <span>Every detail counts.</span>
+            </h1>
+
+            <p>
+                Welcome to Harika ScholarSpace, your elegant
+                workspace for managing student records.
+                Organize, explore and update student
+                information effortlessly.
+            </p>
+
+            <div class="hero-actions">
+                <a href="list.html" class="btn btn-primary">
+                    Explore Students
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+                <a href="insert.html" class="btn btn-outline">
+                    <i class="fa-solid fa-plus"></i>
+                    Add New Student
+                </a>
+            </div>
+        </div>
+        <div class="hero-image">
+    <img
+        src="images/scholar-hero.jpg"
+        alt="Books and study materials representing student learning"
+    >
+</div>
+            <div class="floating-note">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>
+                    <strong>Smart Management</strong>
+                    <small>Simple. Organized. Efficient.</small>
+                </span>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- STATS -->
+    <section class="stats-section">
+
+        <div class="stat-card">
+            <div class="stat-icon">
+                <i class="fa-solid fa-users"></i>
+            </div>
+            <div>
+                <span>Total Students</span>
+                <h2 id="totalStudents">--</h2>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon">
+                <i class="fa-solid fa-layer-group"></i>
+            </div>
+            <div>
+                <span>Active Classes</span>
+                <h2 id="totalClasses">--</h2>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon">
+                <i class="fa-solid fa-chart-simple"></i>
+            </div>
+            <div>
+                <span>Average Marks</span>
+                <h2 id="averageMarks">--</h2>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- SEARCH SECTION -->
+    <section class="search-section">
+
+        <div class="section-heading">
+            <div>
+                <span class="section-label">QUICK ACCESS</span>
+                <h2>Find a student</h2>
+                <p>Search by student name or student ID.</p>
+            </div>
+        </div>
+
+        <div class="search-wrapper">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+
+            <input
+                type="text"
+                id="studentSearch"
+                placeholder="Start typing a name or student ID..."
+                autocomplete="off"
+                aria-label="Search students"
+                aria-controls="searchSuggestions"
+                aria-expanded="false"
+            >
+
+            <div id="searchSuggestions"
+                 class="search-suggestions"
+                 role="listbox"
+                 hidden>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- CRUD FEATURES -->
+    <section class="features-section">
+
+        <div class="section-heading">
+            <div>
+                <span class="section-label">YOUR WORKSPACE</span>
+                <h2>Manage with ease</h2>
+                <p>Everything you need, beautifully organized.</p>
+            </div>
+        </div>
+
+        <div class="features-grid">
+
+            <a href="list.html" class="feature-card">
+                <div class="feature-icon">
+                    <i class="fa-solid fa-address-book"></i>
+                </div>
+                <h3>Student Directory</h3>
+                <p>Explore all student records in one place.</p>
+                <span>View Students
+                    <i class="fa-solid fa-arrow-right"></i>
+                </span>
+            </a>
+
+            <a href="listOne.html" class="feature-card">
+                <div class="feature-icon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <h3>Find Student</h3>
+                <p>Find individual records quickly and easily.</p>
+                <span>Search Records
+                    <i class="fa-solid fa-arrow-right"></i>
+                </span>
+            </a>
+
+            <a href="insert.html" class="feature-card">
+                <div class="feature-icon">
+                    <i class="fa-solid fa-user-plus"></i>
+                </div>
+                <h3>Add Student</h3>
+                <p>Welcome new students into your database.</p>
+                <span>Add Record
+                    <i class="fa-solid fa-arrow-right"></i>
+                </span>
+            </a>
+
+            <a href="update.html" class="feature-card">
+                <div class="feature-icon">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                </div>
+                <h3>Update Records</h3>
+                <p>Keep student information accurate and current.</p>
+                <span>Edit Details
+                    <i class="fa-solid fa-arrow-right"></i>
+                </span>
+            </a>
+
+            <a href="delete.html" class="feature-card">
+                <div class="feature-icon">
+                    <i class="fa-solid fa-trash-can"></i>
+                </div>
+                <h3>Remove Record</h3>
+                <p>Manage outdated records with confirmation.</p>
+                <span>Manage Records
+                    <i class="fa-solid fa-arrow-right"></i>
+                </span>
+            </a>
+
+        </div>
+    </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div>
+        <strong>Harika ScholarSpace</strong>
+        <p>Designed with purpose. Built for better learning.</p>
+    </div>
+
+    <span>© 2026 Harika ScholarSpace | Student Management System</span>
+</footer>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

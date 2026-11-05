@@ -1,0 +1,211 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Directory | Harika ScholarSpace</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- NAVIGATION BAR -->
+<header class="navbar">
+
+    <a href="index.html" class="brand">
+        <span class="brand-icon">
+            <i class="fa-solid fa-graduation-cap"></i>
+        </span>
+
+        <span class="brand-text">
+            <strong>Harika <em>ScholarSpace</em></strong>
+            <small>STUDENT MANAGEMENT SYSTEM</small>
+        </span>
+    </a>
+
+    <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="list.html" class="active">Students</a>
+        <a href="listOne.html">Search</a>
+        <a href="insert.html">Add Student</a>
+        <a href="update.html">Update</a>
+        <a href="delete.html">Delete</a>
+    </nav>
+
+    <div class="nav-avatar">
+        <i class="fa-solid fa-user-graduate"></i>
+    </div>
+
+</header>
+
+<main class="directory-page">
+
+    <!-- PAGE INTRO -->
+    <section class="directory-header">
+
+        <div class="directory-intro">
+            <span class="section-label">
+                <i class="fa-solid fa-leaf"></i>
+                STUDENT RECORDS
+            </span>
+
+            <h1>Student <em>Directory.</em></h1>
+
+            <p>
+                A beautifully organized space to explore,
+                search and manage your student community.
+            </p>
+
+            <div class="directory-header-actions">
+                <a href="index.html" class="btn btn-outline">
+                    <i class="fa-solid fa-house"></i>
+                    Dashboard
+                </a>
+
+                <a href="insert.html" class="btn btn-primary">
+                    <i class="fa-solid fa-user-plus"></i>
+                    Add New Student
+                </a>
+            </div>
+        </div>
+
+        <div class="directory-illustration">
+            <img
+                src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=900&q=85"
+                alt="Students learning together"
+            >
+        </div>
+
+    </section>
+
+    <!-- STUDENT DIRECTORY PANEL -->
+    <section class="directory-panel">
+
+        <div class="panel-top">
+
+            <div>
+                <span class="section-label">YOUR DATABASE</span>
+                <h2>All Students</h2>
+                <p>
+                    Browse and manage student information
+                    with ease.
+                </p>
+            </div>
+
+            <div class="student-count">
+                <i class="fa-solid fa-users"></i>
+                <span id="studentCount">0 Students</span>
+            </div>
+
+        </div>
+
+        <!-- SEARCH & FILTERS -->
+        <div class="directory-toolbar">
+
+            <div class="directory-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="search"
+                    id="directorySearch"
+                    placeholder="Search name or student ID..."
+                    aria-label="Search students"
+                >
+            </div>
+
+            <div class="directory-filter">
+                <i class="fa-solid fa-layer-group"></i>
+
+                <select id="classFilter" aria-label="Filter by class">
+                    <option value="">All Classes</option>
+                </select>
+            </div>
+
+            <div class="directory-filter">
+                <i class="fa-solid fa-arrow-down-wide-short"></i>
+
+                <select id="sortFilter" aria-label="Sort students">
+                    <option value="id">Student ID</option>
+                    <option value="name">Name A-Z</option>
+                    <option value="marks">Highest Marks</option>
+                </select>
+            </div>
+
+            <button
+                type="button"
+                id="refreshStudents"
+                class="refresh-button"
+                title="Refresh records"
+                aria-label="Refresh student records"
+            >
+                <i class="fa-solid fa-rotate"></i>
+            </button>
+
+        </div>
+
+        <!-- TABLE -->
+        <div class="table-container">
+            <table class="student-table">
+
+                <thead>
+                    <tr>
+                        <th>STUDENT ID</th>
+                        <th>STUDENT NAME</th>
+                        <th>CLASS</th>
+                        <th>TOTAL MARKS</th>
+                        <th>AGE</th>
+                        <th>PHONE NUMBER</th>
+                        <th>ACTIONS</th>
+                    </tr>
+                </thead>
+
+                <tbody id="studentTableBody">
+                    <tr>
+                        <td colspan="7" class="table-message">
+                            Loading student records...
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+
+        <div class="table-footer">
+            <p id="tableStatus">Loading records...</p>
+
+            <span>
+                <i class="fa-solid fa-shield-halved"></i>
+                Harika ScholarSpace
+            </span>
+        </div>
+
+    </section>
+
+</main>
+
+<footer class="footer">
+    <div>
+        <strong>Harika ScholarSpace</strong>
+        <p>Designed with purpose. Built for better learning.</p>
+    </div>
+
+    <span>
+        © 2026 Harika ScholarSpace | Student Management System
+    </span>
+</footer>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
